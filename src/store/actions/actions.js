@@ -31,6 +31,14 @@ export const subtract  = (value) => {
     }
 };
 
+export const storeResultAsync  = (res) => {
+    return dispatch => {
+        setTimeout(()=>{
+            dispatch(storeResult(res));
+        }, 2000);    
+    }
+}
+
 export const storeResult  = (res) => {
     return {
         type: STORE,
